@@ -1,12 +1,12 @@
 //$(document).ready(function(){
 	function input(){
-    var text = document.getElementById("inputtext").value;
+    var say = document.getElementById("inputtext").value;
     //output.value = text;
     // document.write(text); 
-     $("#output").html(text);
-    };
+     $("#output").html(say);
+    }
 
 	function clean(){
-		document.write(text); 
-	}
+		document.write(say); 
+	};
 //})
