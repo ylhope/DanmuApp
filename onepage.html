@@ -10,7 +10,7 @@
             clear: both;
 		}
 		.output{
-			width: 90%;
+			width: 500px;
 			height: 200px;
 			border:1px #000 solid;
 			margin: 0 auto;
@@ -46,22 +46,28 @@
 	function input(){
 		var text = document.getElementById("inputtext").value;
 		var out = document.getElementById("output");
-		//out.css("position:relation");
+		// out.css("position:relation");
 		out.style.cssText = "position:relative";
 		for (var i = 0; i <= 5; i++) {
-			var num = Math.floor(Math.random()*190) + 5 ;
+			var num = Math.floor(Math.random()*185 - 2) ;
 			num = num + 'px';
+			var r = 9;
 			var s = document.createElement("span");
 			out.appendChild(s);
 			s.className = "text-in-span";
 			s.innerHTML = text;
 			s.style.cssText = "position:absolute;right:10px;";		
 			s.style.top = num;
-			var t = setTimeout("roll()",20);
-		}	
+			setInterval(function () {r=scroll(s,r);},20);
+			
+			
+		}			
 	}
-	function roll(){
-		//s.style.right += 1px;
+	function scroll(s,r) {
+		r++;
+		s.style.right = r +'px';
+		// if (r == 500) {clearInterval(null);}
+		return r;
 	}
 </script>
 </html>
