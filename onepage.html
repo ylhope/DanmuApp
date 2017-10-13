@@ -48,20 +48,24 @@
 		var out = document.getElementById("output");
 		// out.css("position:relation");
 		out.style.cssText = "position:relative";
-		for (var i = 0; i <= 5; i++) {
+		// for (var i = 0; i <= 5; i++) {
 			var num = Math.floor(Math.random()*185 - 2) ;
 			num = num + 'px';
-			var r = 9;
+			var ri = 10;
 			var s = document.createElement("span");
 			out.appendChild(s);
+			var r = Math.floor(Math.random()*225);
+			var g = Math.floor(Math.random()*225);
+			var b = Math.floor(Math.random()*225);
+			// 生成的弹幕的样式
 			s.className = "text-in-span";
 			s.innerHTML = text;
 			s.style.cssText = "position:absolute;right:10px;";		
 			s.style.top = num;
-			setInterval(function () {r=scroll(s,r);},20);
-			
-			
-		}			
+			s.style.color = "blue";
+			// s.style.color = "rbg(r,g,b);"   使用XX.style.XX的时候，必须赋字符串，而字符串中无法使用变量
+			setInterval(function () {ri=scroll(s,ri);},20);	
+		// }			
 	}
 	function scroll(s,r) {
 		r++;
